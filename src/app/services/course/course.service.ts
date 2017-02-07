@@ -16,5 +16,4 @@ export class CourseService{
         return this._http.get(this._courseUrl)
             .map(res => <CourseComponent[]>res.json())
     }
-    
 }
