@@ -8,7 +8,7 @@ import { CourseService } from '../../services/course/course.service';
     <h2>Courses</h2>
     {{title}}
         <ul>
-        <li *ngFor="let course of courses">
+        <li (click)="goAssignments()" *ngFor="let course of courses">
         {{course.name}}
         </li>
     </ul>
@@ -24,6 +24,11 @@ export class CourseComponent {
 
     constructor(courseService: CourseService) {
         courseService.getCourses().subscribe(r => this.courses = r);
+    }
+
+    goAssignments()
+    {
+        window.location.href='/courses/assignments';
     }
 
 }
