@@ -21,7 +21,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li *ngFor="let link of rightLinks">
-                    <a href="#">{{link}}</a>
+                    <a routerLink="{{link.routerLink}}" href="#">{{link.name}}</a>
                 </li>
             </ul>
         </div>

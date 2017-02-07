@@ -23,7 +23,7 @@ export class HeaderComponent {
 
         // Knoppen aan de rechterkant.
         this.rightLinks.push(new Link('/inbox', 'Inbox'));
-        this.rightLinks.push(new Link('/account', 'Inbox'));
+        this.rightLinks.push(new Link('/account', 'Account'));
         this.rightLinks.push(new Link('/logout', 'Uitloggen'));
     }
 }
