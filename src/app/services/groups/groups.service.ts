@@ -1,28 +1,25 @@
 import { Component } from '@angular/core'
 import { Injectable } from '@angular/core'
 
-import { Group, Member } from '../../components/group/group.component'
+import { GroupComponent, Member } from '../../components/group/group.component'
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
+import { HttpClient } from '../../services/http/httpClient.service' 
 
 @Injectable()
 
-export class GroupService{
-    getGroups() : Member[] {
-        
-        let members = [];
 
-        for (let i = 0; i < 7; i++){
-            members.push({
-                id: 1,
-                givenName: 'Bas',
-                surname: 'van Wijk',
-                displayName: 'bvwijk',
-                mail: 'bas.vanwijk@student.fontys.nl',
-                employeeId: 1,
-                photoUri: 'string'
-                
-            })
-        }
-        return members;
+export class GroupService {
 
+    constructor(private http: HttpClient) {
+
+    }
+
+    getGroups()  {
+        return this.http.get('https://api.fhict.nl/groups')
+            .map(res => <Member[]>res.json())
     }
 }

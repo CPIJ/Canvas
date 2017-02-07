@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { GroupService } from '../../services/groups/groups.service'
 
 @Component({
-    selector: 'group',
+    selector: 'groups',
     templateUrl: 'group.component.html',
     styleUrls: ['group.component.css']
 })
 
-export class Group{
+export class GroupComponent{
     members: Member[];
 
     id: number;
@@ -16,8 +16,8 @@ export class Group{
     groupType: string;
     role: string;
 
-    constructor (values: Object = {}, private groupService: GroupService) {
-        Object.assign(this, values), this.members = groupService.getGroups();
+    constructor (private groupService: GroupService) {
+        groupService.getGroups().subscribe(r => this.members = r);
     }
 }
 

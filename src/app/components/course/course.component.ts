@@ -20,7 +20,7 @@ import { CourseService } from '../../services/course/course.service';
 
 export class CourseComponent {
     title = "dit is de titel";
-    private courses: Course[];
+    private courses: CourseComponent[];
 
     constructor(courseService: CourseService) {
         courseService.getCourses().subscribe(r => this.courses = r);
@@ -28,8 +28,4 @@ export class CourseComponent {
 
 }
 
-export interface Course{
-    id: number;
-    name: string;
-}
 
