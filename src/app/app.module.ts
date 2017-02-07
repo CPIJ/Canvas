@@ -8,6 +8,7 @@ import { CourseComponent} from './components/course/course.component';
 
 // Custom components
 import { Grade } from '../app/components/grade/grade.component';
+import { Header } from '../app/components/header/header.component'
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -17,7 +18,8 @@ import { HttpClient } from '../app/services/http/httpClient.service';
   declarations: [
     AppComponent,
     CourseComponent,
-    Grade
+    Grade,
+    Header
   ],
   imports: [
     BrowserModule,
