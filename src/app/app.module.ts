@@ -4,19 +4,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CourseComponent} from './components/course.component';
+import { CourseComponent} from './components/course/course.component';
+
+// Custom components
+import { Grades } from '../app/components/grade/grade.component'
+
+// Data services
+import { GradeService } from '../app/services/grades/grades.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent
+    CourseComponent,
+    Grades
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    GradeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

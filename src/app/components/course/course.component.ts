@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {CourseService} from '../services/course.service';
+import { Component } from '@angular/core';
+import { CourseService } from '../../services/course/course.service';
 
 
 @Component({
@@ -18,11 +18,18 @@ import {CourseService} from '../services/course.service';
 
 })
 
-export class CourseComponent{
+export class CourseComponent {
     title = "dit is de titel";
-    courses;
+    private courses: Course[];
 
-    constructor(courseService: CourseService){
+    constructor(courseService: CourseService) {
         this.courses = courseService.getCourses();
     }
+
 }
+
+export interface Course{
+    id: number;
+    name: string;
+}
+
