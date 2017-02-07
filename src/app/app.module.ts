@@ -11,6 +11,7 @@ import { HeaderComponent } from '../app/components/header/header.component'
 import { CalendarComponent } from '../app/components/calendar/calendar.component'
 import { CourseComponent } from './components/course/course.component';
 import { GroupComponent } from '../app/components/group/group.component';
+import {AssignmentComponent} from '../app/components/assignment/assignment.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -34,6 +35,10 @@ const appRoutes: Routes = [
         path: 'calendar',
         component: CalendarComponent
     },
+    {
+        path: 'courses/assignments',
+        component: AssignmentComponent
+    },
 ]
 
 // Module info
@@ -44,7 +49,8 @@ const appRoutes: Routes = [
         CalendarComponent,
         CourseComponent,
         GradeComponent,
-        HeaderComponent
+        HeaderComponent,
+        AssignmentComponent
     ],
     imports: [
         BrowserModule,
