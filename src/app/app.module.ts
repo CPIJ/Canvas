@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 // Custom components
-import { Grades } from '../app/components/grade/grade.component';
+import { Grade } from '../app/components/grade/grade.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -15,7 +15,7 @@ import { HttpClient } from '../app/services/http/httpClient.service';
 @NgModule({
   declarations: [
     AppComponent,
-    Grades
+    Grade
   ],
   imports: [
     BrowserModule,
