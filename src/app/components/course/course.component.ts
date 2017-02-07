@@ -9,7 +9,7 @@ import { CourseService } from '../../services/course/course.service';
     {{title}}
         <ul>
         <li *ngFor="let course of courses">
-        {{course}}
+        {{course.name}}
         </li>
     </ul>
 
@@ -23,7 +23,7 @@ export class CourseComponent {
     private courses: Course[];
 
     constructor(courseService: CourseService) {
-        this.courses = courseService.getCourses();
+        courseService.getCourses().subscribe(r => this.courses = r);
     }
 
 }

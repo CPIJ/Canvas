@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { CourseComponent} from './components/course/course.component';
 
 // Custom components
-import { Grades } from '../app/components/grade/grade.component'
+import { Grades } from '../app/components/grade/grade.component';
 
 // Data services
-import { GradeService } from '../app/services/grades/grades.service'
+import { GradeService } from '../app/services/grades/grades.service';
+import { HttpClient } from '../app/services/http/httpClient.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GradeService } from '../app/services/grades/grades.service'
     HttpModule
   ],
   providers: [
-    GradeService
+    GradeService,
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })
