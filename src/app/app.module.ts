@@ -10,8 +10,9 @@ import { GradeComponent } from '../app/components/grade/grade.component';
 import { HeaderComponent } from '../app/components/header/header.component'
 import { CalendarComponent } from '../app/components/calendar/calendar.component'
 import { CourseComponent } from './components/course/course.component';
-import { GroupComponent } from '../app/components/group/group.component';
+import { GroupComponent } from './components/group/group.component';
 import {AssignmentComponent} from '../app/components/assignment/assignment.component';
+
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -21,24 +22,32 @@ import { GroupService } from '../app/services/groups/groups.service';
 
 // Routing
 import { RouterModule, Routes } from '@angular/router';
+import { Routing } from '../app/routing/routes.routing';
 
-const appRoutes: Routes = [
-    {
-        path: 'courses',
-        component: CourseComponent
-    },
-    {
-        path: 'grades',
-        component: GradeComponent
-    },
-    {
-        path: 'calendar',
-        component: CalendarComponent
-    },
+
+
+const appRoutes: Routes =  [
+        {
+            path: 'courses',
+            component: CourseComponent
+        },
+        {
+            path: 'grades',
+            component: GradeComponent
+        },
+        {
+            path: 'calendar',
+            component: CalendarComponent
+        },
+        {
+            path: 'groups',
+            component: GroupComponent
+        },
     {
         path: 'courses/assignments',
         component: AssignmentComponent
     },
+
 ]
 
 // Module info
@@ -50,6 +59,7 @@ const appRoutes: Routes = [
         CourseComponent,
         GradeComponent,
         HeaderComponent,
+        GroupComponent,
         AssignmentComponent
     ],
     imports: [

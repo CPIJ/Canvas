@@ -14,7 +14,7 @@ import { HttpClient } from '../../services/http/httpClient.service'
 export class GradeService {
 
     constructor(private http: HttpClient) {
-
+        
     }
 
     getGrades()  {
