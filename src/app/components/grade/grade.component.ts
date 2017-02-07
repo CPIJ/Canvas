@@ -18,5 +18,6 @@ export class GradeComponent {
 
     constructor(private gradeService: GradeService) {
         gradeService.getGrades().subscribe(r => this.grades = r);
+        
     }
 }
