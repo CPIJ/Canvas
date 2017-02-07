@@ -1,0 +1,9 @@
+.date-string {
+    opacity: 0.5;
+    font-size: 0.7em;
+}
+
+.panel-passed {
+    background-color: 	#5cb85c;
+    color: white;
+}
