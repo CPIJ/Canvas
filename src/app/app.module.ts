@@ -5,7 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { Grades } from '../app/components/grade/grade.component'
+// Custom components
+import { Grades } from '../app/components/grade/grade.component';
+
+// Data services
+import { GradeService } from '../app/services/grades/grades.service';
+import { HttpClient } from '../app/services/http/httpClient.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,10 @@ import { Grades } from '../app/components/grade/grade.component'
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    GradeService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

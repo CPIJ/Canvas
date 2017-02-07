@@ -12,7 +12,7 @@ export class Grades {
     private grades : Grade[]
 
     constructor(private gradeService: GradeService) {
-        this.grades = gradeService.getGrades();
+        gradeService.getGrades().subscribe(r => this.grades = r);
     }
 }
 
