@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { Grades } from '../app/components/grade/grade.component'
+import { Grades } from '../app/components/grade/grade.component';
+import { CalendarComponent } from '../app/components/calendar/calendar.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    Grades
+    Grades,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
