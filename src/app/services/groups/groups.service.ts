@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Injectable } from '@angular/core'
 
-import { Group, Member } from '../../components/group/group.component'
+import { GroupComponent, Member } from '../../components/group/group.component'
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
