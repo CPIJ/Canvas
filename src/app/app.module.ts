@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CourseComponent} from './components/course/course.component';
 
 <<<<<<< HEAD
 import { Grades } from '../app/components/grade/grade.component';
 import { CalendarComponent } from '../app/components/calendar/calendar.component'
 =======
 // Custom components
-import { Grades } from '../app/components/grade/grade.component';
+import { Grade } from '../app/components/grade/grade.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -20,8 +21,13 @@ import { HttpClient } from '../app/services/http/httpClient.service';
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     Grades,
     CalendarComponent
+=======
+    CourseComponent,
+    Grade
+>>>>>>> 57a0645a8ce4d140bc7a6b28557384517b18dd8c
   ],
   imports: [
     BrowserModule,
