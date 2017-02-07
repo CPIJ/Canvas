@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 
 
@@ -16,6 +15,7 @@ import { CourseComponent } from './components/course/course.component';
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
 
+<<<<<<< HEAD
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 
@@ -36,6 +36,8 @@ const appRoutes: Routes = [
 
 // Module info
 
+=======
+>>>>>>> ab56416134457eecbcf678bf29858ac90b005dde
 @NgModule({
     declarations: [
         AppComponent,
