@@ -10,10 +10,13 @@ import 'rxjs/add/operator/map';
 export class AssignmentService{
     constructor(private _http: HttpClient){ }
 
-    private _assignmentUrl = 'https://api.fhict.nl/canvas/course/3724/assignments'
+   
 
-    getAssignments() {
-        return this._http.get(this._assignmentUrl)
+    getAssignments(id) {
+        console.log("hallo" + id)
+         let _assignmentUrl = 'https://api.fhict.nl/canvas/course/' + id +'/assignments'
+
+        return this._http.get(_assignmentUrl)
             .map(res => <AssignmentComponent[]>res.json())
     }
 }

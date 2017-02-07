@@ -44,7 +44,8 @@ const appRoutes: Routes =  [
             component: GroupComponent
         },
     {
-        path: 'courses/assignments',
+        path: 'courses/assignments/:id',
+        
         component: AssignmentComponent
     },
 
