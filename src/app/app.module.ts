@@ -15,7 +15,6 @@ import { CourseComponent } from './components/course/course.component';
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
 
-<<<<<<< HEAD
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 
@@ -36,8 +35,6 @@ const appRoutes: Routes = [
 
 // Module info
 
-=======
->>>>>>> ab56416134457eecbcf678bf29858ac90b005dde
 @NgModule({
     declarations: [
         AppComponent,
