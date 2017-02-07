@@ -7,9 +7,9 @@ import { GradeService } from '../../services/grades/grades.service'
     styleUrls: ['grade.component.css']
 })
 
-export class Grade {
+export class GradeComponent {
 
-    grades: Grade[]
+    grades: GradeComponent[]
     date: Date;
     item: string;
     itemCode: string;

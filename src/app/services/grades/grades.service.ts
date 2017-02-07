@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { Grade } from '../../components/grade/grade.component'
+import { GradeComponent } from '../../components/grade/grade.component'
 
 import { HttpClient } from '../../services/http/httpClient.service' 
 
@@ -19,6 +19,6 @@ export class GradeService {
 
     getGrades()  {
         return this.http.get('https://api.fhict.nl/grades/me')
-            .map(res => <Grade[]>res.json())
+            .map(res => <GradeComponent[]>res.json())
     }
 }
