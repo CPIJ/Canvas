@@ -6,8 +6,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 
-import { Course } from '../../components/course/course.component';
-
 @Injectable()
 export class CourseService{
     constructor(private _http: HttpClient){ }
@@ -19,7 +17,7 @@ export class CourseService{
 
     getCourses() {
         return this._http.get(this._courseUrl)
-            .map(res => <Course[]>res.json())
+            .map(res => <CourseComponent[]>res.json())
     }
     
 }
