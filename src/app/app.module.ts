@@ -5,9 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { Grades } from '../app/components/grade/grade.component'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Grades
   ],
   imports: [
     BrowserModule,
