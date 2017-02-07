@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+<h1>
+  {{title}}
+</h1>  
+<calendar></calendar>
+=======
+<grades></grades>
+>>>>>>> 273e1a7941bc670df18fe890854cbfd036b5e2d3
