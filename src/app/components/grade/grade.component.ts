@@ -7,19 +7,16 @@ import { GradeService } from '../../services/grades/grades.service'
     styleUrls: ['grade.component.css']
 })
 
-export class Grades {
+export class Grade {
 
-    private grades : Grade[]
-
-    constructor(private gradeService: GradeService) {
-        gradeService.getGrades().subscribe(r => this.grades = r);
-    }
-}
-
-export interface Grade {
+    grades: Grade[]
     date: Date;
     item: string;
     itemCode: string;
     grade: number;
     passed: boolean;
+
+    constructor(private gradeService: GradeService) {
+        gradeService.getGrades().subscribe(r => this.grades = r);
+    }
 }

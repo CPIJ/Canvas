@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CourseComponent} from './components/course/course.component';
+
 
 // Custom components
-import { Grades } from '../app/components/grade/grade.component';
+import { Grade } from '../app/components/grade/grade.component';
+import { Header } from '../app/components/header/header.component'
+import { CalendarComponent } from '../app/components/calendar/calendar.component'
+import { CourseComponent} from './components/course/course.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -15,11 +18,14 @@ import { HttpClient } from '../app/services/http/httpClient.service';
 import { GroupService } from '../app/services/groups/groups.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    CalendarComponent,
     CourseComponent,
-    Grades
+    Grade,
+    Header
   ],
   imports: [
     BrowserModule,
