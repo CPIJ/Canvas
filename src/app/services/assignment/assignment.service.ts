@@ -12,7 +12,7 @@ export class AssignmentService{
 
     private _assignmentUrl = 'https://api.fhict.nl/canvas/course/3724/assignments'
 
-    getCourses() {
+    getAssignments() {
         return this._http.get(this._assignmentUrl)
             .map(res => <AssignmentComponent[]>res.json())
     }

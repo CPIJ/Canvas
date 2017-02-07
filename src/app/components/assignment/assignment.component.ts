@@ -23,7 +23,7 @@ export class AssignmentComponent {
     private assignments: AssignmentComponent[];
 
     constructor(assignmentService: AssignmentService) {
-        assignmentService.getCourses().subscribe(r => this.assignments = r);
+        assignmentService.getAssignments().subscribe(r => this.assignments = r);
     }
 
 }
