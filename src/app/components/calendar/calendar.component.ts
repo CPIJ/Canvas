@@ -12,10 +12,11 @@ export class CalendarComponent implements OnInit {
   Tags: string[]; 
   
   constructor(private calendarService:CalendarService) {  
-    this.calendarService.getTags("Students").subscribe(r=>this.Tags = r);
+    this.calendarService.getTags("Students").subscribe(r => this.Tags = r);
    }
 
+
   ngOnInit() {
+  } 
   }
 
-}
