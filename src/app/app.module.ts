@@ -10,6 +10,7 @@ import { GradeComponent } from '../app/components/grade/grade.component';
 import { HeaderComponent } from '../app/components/header/header.component'
 import { CalendarComponent } from '../app/components/calendar/calendar.component'
 import { CourseComponent } from './components/course/course.component';
+import { GroupComponent } from '../app/components/group/group.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';

@@ -7,7 +7,7 @@ import { GroupService } from '../../services/groups/groups.service'
     styleUrls: ['group.component.css']
 })
 
-export class Group{
+export class GroupComponent{
     members: Member[];
 
     id: number;
