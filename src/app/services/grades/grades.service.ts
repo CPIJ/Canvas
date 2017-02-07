@@ -18,27 +18,7 @@ export class GradeService {
     }
 
     getGrades()  {
-
-        //Deze code is niet geautorisee.d.
-
         return this.http.get('https://api.fhict.nl/grades/me')
             .map(res => <Grade[]>res.json())
-        
-
-        // Dit werkt wel, soort mock data.    
-
-        // let grades = [];
-
-        // for (let i = 0; i < 5; i++) {
-        //     grades.push({
-        //         date: '12-12-12',
-        //         item: 'LP: Product',
-        //         itemCode: 'LP-PD',
-        //         grade: 7.5,
-        //         passed: true
-        //     })
-        // }
-
-        // return grades;
     }
 }

@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CourseComponent} from './components/course/course.component';
 
 // Custom components
-import { Grades } from '../app/components/grade/grade.component';
+import { Grade } from '../app/components/grade/grade.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -17,7 +18,8 @@ import { AuthenticatedHttpService } from '../app/services/http/authenticated-htt
 @NgModule({
   declarations: [
     AppComponent,
-    Grades
+    CourseComponent,
+    Grade
   ],
   imports: [
     BrowserModule,
