@@ -14,6 +14,8 @@ import { CourseComponent } from './components/course/course.component';
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
+import { GroupService } from '../app/services/groups/groups.service';
+
 
 // Routing
 import { RouterModule, Routes } from '@angular/router';
