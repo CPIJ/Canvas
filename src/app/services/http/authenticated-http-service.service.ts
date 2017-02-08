@@ -19,7 +19,7 @@ export class AuthenticatedHttpService extends Http {
     return super.request(url, options).catch((error: Response) => {
             if (error.status === 401 || error.status === 403) {
                 window.location.href = 'https://identity.fhict.nl/connect/authorize?https://identity.fhict.nl/connect/authorize?client_id='+ this.clientid +
-                                  '&scope=fhict%20fhict_schedule&response_type=token&redirect_uri=' + window.location.hostname + "/logged-in&state=" + this.router.url;
+                                  '&scope=fhict%20fhict_schedule&response_type=token&redirect_uri=' + window.location.origin + "&state=" + this.router.url;
             }
             return Observable.throw(error);
         });

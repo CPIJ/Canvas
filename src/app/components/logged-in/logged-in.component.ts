@@ -1,35 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { Router, ActivatedRoute} from '@angular/router';
+import { URLSearchParams, } from '@angular/http';
 import { HttpClient } from '../../../app/services/http/httpClient.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logged-in',
   templateUrl: './logged-in.component.html',
   styleUrls: ['./logged-in.component.css']
 })
-export class LoggedInComponent implements OnInit {
+export class LoggedInComponent{
 
-  constructor(private route: ActivatedRoute, private router:Router) { 
+  constructor(private route: ActivatedRoute, private router: Router) 
+  { 
+      // this.route.fragment.subscribe((fragment: string) => {
+      //     if (fragment == undefined || fragment == "")
+      //         return;
+          
+      //     let params = new URLSearchParams(fragment);
+      //     HttpClient.token = params.get('access_token');
+      //     let loc = params.get('status');
 
-     this.route.fragment.subscribe((fragment: string) => {
-        if (fragment == undefined || fragment == "")
-            return;
-        let parameters = fragment.split('&');
+      //     if (loc != undefined)
+      //       this.router.navigate([loc]);
+      // });
 
-        for (let para of parameters) {
-            if (para.startsWith("access_token=")) {
-                HttpClient.token = para.substring(para.indexOf('=') +1);
-            }
-            else if (para.startsWith("status=")) {
-                this.router.url = para.substring(para.indexOf('=') +1);
-            }
-        }
-     })
-   }
-  
-  ngOnInit() {
+      this.route
+        .queryParams
+        .subscribe(params => {
+            HttpClient.token = params['#access_token'];
+            let loc = params['status'];
+
+           if (loc != undefined)
+             this.router.navigate([loc]);
+        });      
   }
 
 }

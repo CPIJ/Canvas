@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule, Http, URLSearchParams } from '@angular/http';
+import { Router, ActivatedRoute} from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -45,10 +46,6 @@ const appRoutes: Routes =  [
             path: 'courses/assignments/:id',            
             component: AssignmentComponent
         },
-        {
-            path: 'logged-in',            
-            component: AssignmentComponent
-        },
 ]
 
 // Module info
@@ -78,4 +75,18 @@ const appRoutes: Routes =  [
     bootstrap: [AppComponent]
 })
 export class AppModule {
+    constructor(private route: ActivatedRoute, private router: Router) 
+  { 
+      this.route.fragment.subscribe((fragment: string) => {
+          if (fragment == undefined || fragment == "")
+              return;
+          
+          let params = new URLSearchParams(fragment);
+          HttpClient.token = params.get('access_token');
+          let loc = params.get('status');
+
+          if (loc != undefined)
+            this.router.navigate([loc]);
+      });     
+  }
 }
