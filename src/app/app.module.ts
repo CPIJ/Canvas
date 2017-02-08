@@ -11,6 +11,7 @@ import { CalendarComponent } from '../app/components/calendar/calendar.component
 import { CourseComponent } from './components/course/course.component';
 import { GroupComponent } from './components/group/group.component';
 import { AssignmentComponent } from '../app/components/assignment/assignment.component';
+import { NewsFeedComponent } from '../app/components/news-feed/news-feed.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -20,7 +21,7 @@ import { GroupService } from '../app/services/groups/groups.service';
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
-import { NewsFeedComponent } from './news-feed/news-feed.component';
+
 const appRoutes: Routes = [
     {
         path: 'courses',
