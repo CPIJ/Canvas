@@ -4,5 +4,7 @@ export class item{
     title:string; 
     author:string; 
     image:string; 
-    
+    thumbnail:string; 
+    link:string; 
+    content:string; 
 }
