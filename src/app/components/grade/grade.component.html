@@ -9,7 +9,11 @@
             <div class="panel panel-default" *ngIf="grade.date.includes(year)">
                 <div class="panel-heading panel-passed">{{grade.itemCode}}<span class="pull-right date-string">{{grade.date.substring(0,10)}}</span></div>
                 <div class="panel-body">
-                    <h5>{{grade.item}} <span class="label label-info pull-right label-lg">{{grade.grade}}</span></h5>            
+                    <h5>{{grade.item}}
+                        <span class="label label-primary pull-right label-lg">
+                            {{grade.grade}}
+                        </span>
+                    </h5>
                 </div>
             </div>
         </div>
