@@ -16,12 +16,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li *ngFor="let link of leftLinks">
-                    <a href="#">{{link}}</a>
+                    <a routerLink="{{link.routerLink}}" href="#">{{link.name}}</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li *ngFor="let link of rightLinks">
-                    <a href="#">{{link}}</a>
+                    <a routerLink="{{link.routerLink}}" href="#">{{link.name}}</a>
                 </li>
             </ul>
         </div>

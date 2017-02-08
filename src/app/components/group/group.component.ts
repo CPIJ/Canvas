@@ -16,8 +16,8 @@ export class GroupComponent{
     groupType: string;
     role: string;
 
-    constructor (values: Object = {}, private groupService: GroupService) {
-        Object.assign(this, values), groupService.getGroups().subscribe(r => this.members = r);
+    constructor (private groupService: GroupService) {
+        groupService.getGroups().subscribe(r => this.members = r);
     }
 }
 

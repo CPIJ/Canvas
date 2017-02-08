@@ -7,11 +7,33 @@ import { Component } from '@angular/core'
 
 export class HeaderComponent {
 
-    leftLinks = [];
-    rightLinks = [];
+    leftLinks: Link[];
+    rightLinks: Link[];
     
     constructor() {
-        this.leftLinks = ['Dashboard', 'Rooster', 'Courses', 'Cijfers']
-        this.rightLinks = ['Inbox', 'Account', 'Uitloggen']
+        // Init
+        this.leftLinks = [];
+        this.rightLinks = [];
+
+        // Knoppen aan de linkerkant.
+        this.leftLinks.push(new Link('/calendar', 'Rooster'));
+        this.leftLinks.push(new Link('/courses', 'Courses'));
+        this.leftLinks.push(new Link('/grades', 'Cijfers'));
+        this.leftLinks.push(new Link('/groups', 'Groepen'));
+
+        // Knoppen aan de rechterkant.
+        this.rightLinks.push(new Link('/inbox', 'Inbox'));
+        this.rightLinks.push(new Link('/account', 'Account'));
+        this.rightLinks.push(new Link('/logout', 'Uitloggen'));
+    }
+}
+
+class Link {
+    routerLink: string;
+    name: string
+
+    constructor(rl, name){
+        this.routerLink = rl;
+        this.name = name;
     }
 } 

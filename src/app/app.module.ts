@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
+import { ActivatedRoute } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,8 @@ import { GradeComponent } from '../app/components/grade/grade.component';
 import { HeaderComponent } from '../app/components/header/header.component';
 import { CalendarComponent } from '../app/components/calendar/calendar.component';
 import { CourseComponent } from './components/course/course.component';
-import { GroupComponent } from '../app/components/group/group.component';
+import { GroupComponent } from './components/group/group.component';
+import { AssignmentComponent } from '../app/components/assignment/assignment.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -19,24 +21,32 @@ import { HttpClient } from '../app/services/http/httpClient.service';
 import { GroupService } from '../app/services/groups/groups.service';
 import { AuthenticatedHttpService } from '../app/services/http/authenticated-http-service.service';
 
-
 // Routing
 import { RouterModule, Routes } from '@angular/router';
+import { Routing } from '../app/routing/routes.routing';
 
-const appRoutes: Routes = [
+const appRoutes: Routes =  [
+        {
+            path: 'courses',
+            component: CourseComponent
+        },
+        {
+            path: 'grades',
+            component: GradeComponent
+        },
+        {
+            path: 'calendar',
+            component: CalendarComponent
+        },
+        {
+            path: 'groups',
+            component: GroupComponent
+        },
     {
-        path: 'courses',
-        component: CourseComponent
+        path: 'courses/assignments',
+        component: AssignmentComponent
     },
-    {
-        path: 'grades',
-        component: GradeComponent
-    },
-    {
-        path: 'calendar',
-        component: CalendarComponent
-    },
-];
+]
 
 // Module info
 @NgModule({
@@ -45,7 +55,9 @@ const appRoutes: Routes = [
         CalendarComponent,
         CourseComponent,
         GradeComponent,
-        HeaderComponent
+        HeaderComponent,
+        GroupComponent,
+        AssignmentComponent
     ],
     imports: [
         BrowserModule,
@@ -55,9 +67,29 @@ const appRoutes: Routes = [
     ],
     providers: [
         GradeService,
+        GroupService,
         HttpClient, 
        { provide: Http, useClass: AuthenticatedHttpService },
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+   constructor(private route: ActivatedRoute) { 
+     this.route.fragment.subscribe((fragment: string) => {
+        if (fragment == undefined || fragment == "")
+            return;
+        let parameters = fragment.split('&');
+
+        for (let para of parameters)
+        {
+            if (para.startsWith("access_token="))
+            {
+                HttpClient.token = para.substring(para.indexOf('=') +1);
+                
+                console.log("token ", HttpClient.token);
+            }
+            
+        }
+     })
+   }
+}
