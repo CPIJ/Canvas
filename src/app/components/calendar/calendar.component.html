@@ -1,3 +1,3 @@
 <h1>{{Title}}</h1> 
 
-<div *ngFor="let s of PlannedItems">{{s.description}}</div>
+<div *ngFor="let s of PlannedItems; let i = index">{{s.description}}  {{s.start}} {{s.end}} </div> 

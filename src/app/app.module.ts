@@ -11,15 +11,18 @@ import { CalendarComponent } from '../app/components/calendar/calendar.component
 import { CourseComponent } from './components/course/course.component';
 import { GroupComponent } from './components/group/group.component';
 import { AssignmentComponent } from '../app/components/assignment/assignment.component';
+import { AccountComponent } from '../app/components/account/account.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
 import { GroupService } from '../app/services/groups/groups.service';
+import { AccountService } from '../app/services/account/account.service';
 
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 const appRoutes: Routes = [
     {
         path: 'courses',
@@ -42,6 +45,10 @@ const appRoutes: Routes = [
         
         component: AssignmentComponent
     },
+        {
+            path: 'account',
+            component: AccountComponent
+        }
 ]
 
 // Module info
@@ -54,7 +61,9 @@ const appRoutes: Routes = [
         GradeComponent,
         HeaderComponent,
         GroupComponent,
-        AssignmentComponent
+        AssignmentComponent,
+        AccountComponent,
+        NewsFeedComponent
     ],
     imports: [
         BrowserModule,
@@ -65,7 +74,8 @@ const appRoutes: Routes = [
     providers: [
         GradeService,
         HttpClient,
-        GroupService
+        GroupService,
+        AccountService
     ],
     bootstrap: [AppComponent]
 })
