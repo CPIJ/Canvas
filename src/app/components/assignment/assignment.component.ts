@@ -16,15 +16,12 @@ export class AssignmentComponent {
     private assignments: AssignmentComponent[];
     private course: Course;
 
-
     constructor(courseService: CourseService, assignmentService: AssignmentService, private activatedRoute: ActivatedRoute) {
         this.activatedRoute.params.subscribe((params: Params) => {
             let Id = params['id'];
-            assignmentService.getAssignments(Id).subscribe(r => this.assignments = r);
-            courseService.getCourses().subscribe(r => {
-                this.course = r.filter(c => c.id == Id)[0]
-            }
-            )
+            assignmentService.getAssignments(Id).subscribe(r => {
+                this.assignments = r;
+            })
         });
     }
 }
