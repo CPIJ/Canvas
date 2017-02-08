@@ -1,0 +1,14 @@
+<h1>Opdrachten</h1>
+<div *ngFor="let assignment of assignments">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>{{assignment.name}}
+                <span class="pull-right" *ngIf="assignment.due_at"> <h6>Inleveren voor {{assignment.due_at.substring(0,10)}}</h6></span>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div [innerHTML]="assignment.description"></div>
+        </div>
+    </div>
+</div>  
