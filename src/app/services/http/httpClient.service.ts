@@ -17,7 +17,7 @@ export class HttpClient {
     }
 
     get(url) {
-        let headers = new Headers();
+        let headers = new Headers();    
         this.authorize(headers);
         return this.http.get(url, {
             headers: headers
