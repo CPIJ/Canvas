@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Injectable } from '@angular/core'
 
-import { GroupComponent, Member } from '../../components/group/group.component'
+import { GroupComponent } from '../../components/group/group.component'
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -20,6 +20,6 @@ export class GroupService {
 
     getGroups()  {
         return this.http.get('https://api.fhict.nl/groups')
-            .map(res => <Member[]>res.json())
+            .map(res => <GroupComponent[]>res.json())
     }
 }
