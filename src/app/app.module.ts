@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-
 // Custom components
 import { GradeComponent } from '../app/components/grade/grade.component';
 import { HeaderComponent } from '../app/components/header/header.component';
@@ -42,10 +41,10 @@ const appRoutes: Routes =  [
             path: 'groups',
             component: GroupComponent
         },
-    {
-        path: 'courses/assignments',
-        component: AssignmentComponent
-    },
+        {
+            path: 'courses/assignments/:id',            
+            component: AssignmentComponent
+        },
 ]
 
 // Module info
