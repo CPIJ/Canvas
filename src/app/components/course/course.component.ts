@@ -5,16 +5,7 @@ import { CourseService } from '../../services/course/course.service';
 
 @Component({
     selector: 'courses',
-    template: `
-    <h2>Courses</h2>
-    {{title}}
-        <ul>
-        <li  *ngFor="let course of courses">
-        <a (click)="goAssignments(course.id)"> {{course.name}} </a>
-        </li>
-    </ul>
-
-    `,
+    templateUrl: 'course.component.html',
     providers: [CourseService]
 
 })

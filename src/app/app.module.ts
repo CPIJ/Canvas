@@ -22,7 +22,7 @@ import { AccountService } from '../app/services/account/account.service';
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
-
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 const appRoutes: Routes = [
     {
         path: 'courses',
@@ -62,7 +62,8 @@ const appRoutes: Routes = [
         HeaderComponent,
         GroupComponent,
         AssignmentComponent,
-        AccountComponent
+        AccountComponent,
+        NewsFeedComponent
     ],
     imports: [
         BrowserModule,
