@@ -13,7 +13,6 @@ export class AssignmentService{
    
 
     getAssignments(id) {
-        console.log("hallo" + id)
          let _assignmentUrl = 'https://api.fhict.nl/canvas/course/' + id +'/assignments'
 
         return this._http.get(_assignmentUrl)

@@ -11,11 +11,14 @@ import { AssignmentService } from '../../services/assignment/assignment.service'
     template: `
     <h2>assignments</h2>
     {{title}}
+    <div *ngFor="let assignment of assignments">
         <ul>
-        <li *ngFor="let assignment of assignments">
-        {{assignment.name}}
-        </li>
-    </ul>
+            <li>
+            {{assignment.name}}
+            </li>
+        </ul>
+        <div [innerHTML]="assignment.description"></div>
+    </div>
 
     `,
     providers: [AssignmentService]
@@ -30,7 +33,6 @@ export class AssignmentComponent {
     constructor(assignmentService: AssignmentService, private activatedRoute: ActivatedRoute) {
         this.activatedRoute.params.subscribe((params: Params) => {
         let Id = params['id'];
-        console.log(Id);
         assignmentService.getAssignments(Id).subscribe(r => this.assignments = r);
       });
 
