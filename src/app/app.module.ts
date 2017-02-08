@@ -65,7 +65,8 @@ const appRoutes: Routes = [
     ],
     providers: [
         GradeService,
-        HttpClient
+        HttpClient,
+        GroupService
     ],
     bootstrap: [AppComponent]
 })

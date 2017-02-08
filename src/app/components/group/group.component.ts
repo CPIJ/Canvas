@@ -8,7 +8,9 @@ import { GroupService } from '../../services/groups/groups.service'
 })
 
 export class GroupComponent{
-    members: Member[];
+    groups: GroupComponent[];
+
+    // members: Member[];
 
     id: number;
     url: string;
@@ -17,16 +19,16 @@ export class GroupComponent{
     role: string;
 
     constructor (private groupService: GroupService) {
-        groupService.getGroups().subscribe(r => this.members = r);
+        groupService.getGroups().subscribe(r => this.groups = r);
     }
 }
 
-export interface Member{
-    id: number;
-    givenName: string;
-    surname: string;
-    displayName: string;
-    mail: string;
-    employeeId: string;
-    photoUri: string;
-}
+// export interface Member{
+//     id: number;
+//     givenName: string;
+//     surname: string;
+//     displayName: string;
+//     mail: string;
+//     employeeId: string;
+//     photoUri: string;
+// }
