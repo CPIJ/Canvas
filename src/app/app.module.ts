@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
-import { ActivatedRoute } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +11,8 @@ import { HeaderComponent } from '../app/components/header/header.component';
 import { CalendarComponent } from '../app/components/calendar/calendar.component';
 import { CourseComponent } from './components/course/course.component';
 import { GroupComponent } from './components/group/group.component';
-import { AssignmentComponent } from '../app/components/assignment/assignment.component';
+import { AssignmentComponent } from './components/assignment/assignment.component';
+import { LoggedInComponent } from './components/logged-in/logged-in.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -45,6 +45,10 @@ const appRoutes: Routes =  [
             path: 'courses/assignments/:id',            
             component: AssignmentComponent
         },
+        {
+            path: 'logged-in',            
+            component: AssignmentComponent
+        },
 ]
 
 // Module info
@@ -56,7 +60,8 @@ const appRoutes: Routes =  [
         GradeComponent,
         HeaderComponent,
         GroupComponent,
-        AssignmentComponent
+        AssignmentComponent,
+        LoggedInComponent
     ],
     imports: [
         BrowserModule,
@@ -73,22 +78,4 @@ const appRoutes: Routes =  [
     bootstrap: [AppComponent]
 })
 export class AppModule {
-   constructor(private route: ActivatedRoute) { 
-     this.route.fragment.subscribe((fragment: string) => {
-        if (fragment == undefined || fragment == "")
-            return;
-        let parameters = fragment.split('&');
-
-        for (let para of parameters)
-        {
-            if (para.startsWith("access_token="))
-            {
-                HttpClient.token = para.substring(para.indexOf('=') +1);
-                
-                console.log("token ", HttpClient.token);
-            }
-            
-        }
-     })
-   }
 }
