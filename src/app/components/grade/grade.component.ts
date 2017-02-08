@@ -9,15 +9,37 @@ import { GradeService } from '../../services/grades/grades.service'
 
 export class GradeComponent {
 
-    grades: GradeComponent[]
+    grades: IGrade[]
+    availableYears: number[];
+
+    constructor(private gradeService: GradeService) {
+        this.grades = [];
+        this.availableYears = [];
+
+        gradeService.getGrades().subscribe(r => this.ConstructObject(r));
+    }
+
+    ConstructObject(data) {
+        for (let i = 0; i < data.length; i++) {
+            this.grades.push(new IGrade(data[i]));
+
+            let currentYear = data[i].date.substring(0,4)
+
+            if (this.availableYears.indexOf(currentYear) == -1) {
+                this.availableYears.push(currentYear)
+            } 
+        }
+    }
+}
+
+export class IGrade {
     date: Date;
     item: string;
     itemCode: string;
     grade: number;
     passed: boolean;
 
-    constructor(private gradeService: GradeService) {
-        gradeService.getGrades().subscribe(r => this.grades = r);
-        
+    constructor(values: Object = {}) {
+        Object.assign(this, values)
     }
 }

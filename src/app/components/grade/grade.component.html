@@ -1,33 +1,15 @@
 <h1>Cijfers</h1>
 
-<div class="panel panel-default">
+<div class="panel panel-default" *ngFor="let year of availableYears">
     <div class="panel-heading">
-        <h3>2017</h3>
+        <h3>{{year}}</h3>
     </div>
     <div class="panel-body">
-        <div class="col-md-4" *ngFor="let grade of grades">
-            <div class="panel panel-default" *ngIf="grade.date.includes('2017')">
+        <div class="col-md-3" *ngFor="let grade of grades">
+            <div class="panel panel-default" *ngIf="grade.date.includes(year)">
                 <div class="panel-heading panel-passed">{{grade.itemCode}}<span class="pull-right date-string">{{grade.date.substring(0,10)}}</span></div>
                 <div class="panel-body">
-                    {{grade.item}}
-                    <br> {{grade.grade}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3>2016</h3>
-    </div>
-    <div class="panel-body">
-        <div class="col-md-4" *ngFor="let grade of grades">
-            <div class="panel panel-default" *ngIf="grade.date.includes('2016')">
-                <div class="panel-heading panel-passed">{{grade.itemCode}}<span class="pull-right date-string">{{grade.date.substring(0,10)}}</span></div>
-                <div class="panel-body">
-                    {{grade.item}}
-                    <br> {{grade.grade}}
+                    <h5>{{grade.item}} <span class="label label-info pull-right label-lg">{{grade.grade}}</span></h5>            
                 </div>
             </div>
         </div>
