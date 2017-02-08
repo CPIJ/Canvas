@@ -1,6 +1,3 @@
-<ul class="nav nav-pills">
-  <li role="presentation" *ngFor="let item of Tags; let i = index"><a href="#">
-        {{item}} 
-        </a>
-  </li>
-</ul>
+<h1>{{Title}}</h1> 
+
+<div *ngFor="let s of PlannedItems">{{s.description}}</div>

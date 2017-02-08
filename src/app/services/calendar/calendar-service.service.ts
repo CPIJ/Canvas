@@ -11,11 +11,10 @@ export class CalendarService {
     
   } 
 
-  // Type can be teacher or student
-   getTags(type:string){ 
-    return this.http.get('https://api.fhict.nl/calendar/tags/'+type) 
-      .map(res=> <string[]>res.json()); 
-  } 
+  getMySchedule(){ 
+    return this.http.get('https://api.fhict.nl/schedule/me?expandTeacher=true&startLastMonday=true&expandWeeks=true&includeDeleted=true')
+      .map(res=> res.json());
+  }
 
 } 
 
