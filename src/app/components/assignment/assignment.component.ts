@@ -8,19 +8,7 @@ import { AssignmentService } from '../../services/assignment/assignment.service'
 
 @Component({
     selector: 'assignments',
-    template: `
-    <h2>assignments</h2>
-    {{title}}
-    <div *ngFor="let assignment of assignments">
-        <ul>
-            <li>
-            {{assignment.name}}
-            </li>
-        </ul>
-        <div [innerHTML]="assignment.description"></div>
-    </div>
-
-    `,
+    templateUrl: 'assignment.component.html',
     providers: [AssignmentService]
 
 })
