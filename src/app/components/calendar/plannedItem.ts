@@ -8,7 +8,6 @@ export class plannedItem {
   subject: string
   teacherAbbreviation: string
   uid: string
-  updatedAt: string 
-
+  updatedAt: string;
 }
 
