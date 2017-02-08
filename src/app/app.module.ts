@@ -19,6 +19,7 @@ import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
 import { GroupService } from '../app/services/groups/groups.service';
 import { AccountService } from '../app/services/account/account.service';
+import { CourseService } from '../app/services/course/course.service';
 
 // Routing
 import { RouterModule, Routes } from '@angular/router';
@@ -76,7 +77,8 @@ const appRoutes: Routes = [
         GradeService,
         HttpClient,
         GroupService,
-        AccountService
+        AccountService,
+        CourseService
     ],
     bootstrap: [AppComponent]
 })
