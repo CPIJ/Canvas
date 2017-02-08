@@ -20,6 +20,7 @@ import { GroupService } from '../app/services/groups/groups.service';
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 const appRoutes: Routes = [
     {
         path: 'courses',
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
         GradeComponent,
         HeaderComponent,
         GroupComponent,
-        AssignmentComponent
+        AssignmentComponent,
+        NewsFeedComponent
     ],
     imports: [
         BrowserModule,

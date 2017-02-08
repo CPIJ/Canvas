@@ -12,9 +12,10 @@ export class CalendarService {
   } 
 
   getMySchedule(){ 
-    return this.http.get('https://api.fhict.nl/schedule/me?expandTeacher=true&startLastMonday=true&expandWeeks=true&includeDeleted=true')
+    return this.http.get('https://api.fhict.nl/schedule/me?days=1&expandTeacher=true&startLastMonday=true&true&includeDeleted=true')
       .map(res=> res.json());
-  }
+  } 
+
 
 } 
 
