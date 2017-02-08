@@ -11,7 +11,11 @@ import { CalendarComponent } from '../app/components/calendar/calendar.component
 import { CourseComponent } from './components/course/course.component';
 import { GroupComponent } from './components/group/group.component';
 import { AssignmentComponent } from '../app/components/assignment/assignment.component';
+<<<<<<< HEAD
+import { NewsFeedComponent } from '../app/components/news-feed/news-feed.component';
+=======
 import { AccountComponent } from '../app/components/account/account.component';
+>>>>>>> 0993da688e14ce48fe367318bc82d03705a8553f
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
@@ -22,7 +26,7 @@ import { AccountService } from '../app/services/account/account.service';
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
-import { NewsFeedComponent } from './news-feed/news-feed.component';
+
 const appRoutes: Routes = [
     {
         path: 'courses',

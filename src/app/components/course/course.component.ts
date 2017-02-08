@@ -12,6 +12,7 @@ import { CourseService } from '../../services/course/course.service';
 
 export class CourseComponent {
     title = "dit is de titel";
+    id: number;
     private courses: CourseComponent[];
 
 
