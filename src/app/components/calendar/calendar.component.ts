@@ -10,7 +10,7 @@ import {plannedItem} from '../calendar/plannedItem';
 
 })
 export class CalendarComponent implements OnInit {
-
+  
   Schedule: any;
   Title: string;
   Classes: string[]; 
@@ -20,16 +20,16 @@ export class CalendarComponent implements OnInit {
     //Differs from other objects in the application because of the complexity of the object  
     //Therefore it is easier to split the different parts into seperate objects 
     this.calendarService.getMySchedule().subscribe((data) => this.Title = data.title) 
-    this.calendarService.getMySchedule().subscribe((data) => this.PlannedItems = <plannedItem[]>data.data) 
-    this.calendarService.getMySchedule().subscribe((data) => console.log(data))
-
-
+    this.calendarService.getMySchedule().subscribe((data) => this.PlannedItems = <plannedItem[]>data.data);   
+      
   }
 
-  ngOnInit() {
+  ngOnInit() {   
+
+    }
   }
 
-  } 
+   
 
 
 

@@ -15,12 +15,17 @@ import { AssignmentComponent } from '../app/components/assignment/assignment.com
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
-import { GroupService } from '../app/services/groups/groups.service';
+import { GroupService } from '../app/services/groups/groups.service'; 
+import {NewsFeedService} from '../app/services/news-feed/news-feed.service'; 
 
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
-import { NewsFeedComponent } from './news-feed/news-feed.component';
+import { NewsFeedComponent } from '../app/components/news-feed/news-feed.component'; 
+
+//Custom Pipes 
+import {GroupByDatePipe} from '../app/pipes/group-by-date.pipe';  
+
 const appRoutes: Routes = [
     {
         path: 'courses',
@@ -42,7 +47,11 @@ const appRoutes: Routes = [
         path: 'courses/assignments/:id',
         
         component: AssignmentComponent
-    },
+    },  
+    { 
+        path: 'news', 
+        component: NewsFeedComponent
+    }
 ]
 
 // Module info
@@ -56,7 +65,8 @@ const appRoutes: Routes = [
         HeaderComponent,
         GroupComponent,
         AssignmentComponent,
-        NewsFeedComponent
+        NewsFeedComponent,  
+        GroupByDatePipe
     ],
     imports: [
         BrowserModule,
@@ -67,7 +77,8 @@ const appRoutes: Routes = [
     providers: [
         GradeService,
         HttpClient,
-        GroupService
+        GroupService, 
+        NewsFeedService
     ],
     bootstrap: [AppComponent]
 })

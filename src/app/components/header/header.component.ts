@@ -19,7 +19,8 @@ export class HeaderComponent {
         this.leftLinks.push(new Link('/calendar', 'Rooster'));
         this.leftLinks.push(new Link('/courses', 'Courses'));
         this.leftLinks.push(new Link('/grades', 'Cijfers'));
-        this.leftLinks.push(new Link('/groups', 'Groepen'));
+        this.leftLinks.push(new Link('/groups', 'Groepen')); 
+        this.leftLinks.push(new Link('/news', 'Nieuws'));
 
         // Knoppen aan de rechterkant.
         this.rightLinks.push(new Link('/inbox', 'Inbox'));
