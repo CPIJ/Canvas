@@ -76,10 +76,10 @@ const appRoutes: Routes = [
         path: 'courses/assignments/:id',
         component: AssignmentComponent
     },
-        {
-            path: 'account',
-            component: AccountComponent
-        }
+    {
+        path: 'account',
+        component: AccountComponent
+    }
 ]
 
 // Module info

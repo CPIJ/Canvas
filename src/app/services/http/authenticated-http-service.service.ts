@@ -9,7 +9,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class AuthenticatedHttpService extends Http {
 
-  clientid : string = '';
+  clientid : string = 'i357629-canvas2.0b';
   
   constructor(backend: XHRBackend, defaultOptions: RequestOptions, private router:Router) {
     super(backend, defaultOptions);
@@ -18,8 +18,10 @@ export class AuthenticatedHttpService extends Http {
   request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
     return super.request(url, options).catch((error: Response) => {
             if (error.status === 401 || error.status === 403) {
-                window.location.href = 'https://identity.fhict.nl/connect/authorize?https://identity.fhict.nl/connect/authorize?client_id='+ this.clientid +
-                                  '&scope=fhict%20fhict_schedule&response_type=token&redirect_uri=' + window.location.origin + "&state=" + this.router.url;
+                window.location.href = 
+                'https://identity.fhict.nl/connect/authorize?client_id='+ 
+                      this.clientid + '&scope=fhict%20fhict_personal&response_type=token&redirect_uri=localhost:4200&state=' + this.router.url;
+                      
             }
             return Observable.throw(error);
         });
