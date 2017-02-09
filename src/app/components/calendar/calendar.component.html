@@ -1,3 +1,4 @@
 <h1>{{Title}}</h1> 
-
-<div *ngFor="let s of PlannedItems; let i = index">{{s.description}}  {{s.start}} {{s.end}} </div> 
+<div *ngIf="PlannedItems?.length > 0">       
+    <div *ngFor="let s of PlannedItems | GroupByDate:'start'">{{s.description}}  {{s.start }} {{s.end}} </div> 
+</div>

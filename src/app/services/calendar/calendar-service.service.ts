@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {CalendarComponent} from '../../components/calendar/calendar.component';  
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map'; 
+import 'rxjs/add/operator/map';  
+import 'rxjs/add/operator/groupby';  
 import { HttpClient } from '../../services/http/httpClient.service'  
 @Injectable()
 export class CalendarService {
@@ -12,8 +13,9 @@ export class CalendarService {
   } 
 
   getMySchedule(){ 
-    return this.http.get('https://api.fhict.nl/schedule/me?days=1&expandTeacher=true&startLastMonday=true&true&includeDeleted=true')
-      .map(res=> res.json());
+    return this.http.get('https://api.fhict.nl/schedule/me?days=7&expandTeacher=true&startLastMonday=true&true&includeDeleted=true')
+      .map(res=> res.json()) 
+
   } 
 
 

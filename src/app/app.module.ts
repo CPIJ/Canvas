@@ -23,6 +23,7 @@ import { AccountComponent } from '../app/components/account/account.component';
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
+import {NewsFeedService} from '../app/services/news-feed/news-feed.service'; 
 import { GroupService } from '../app/services/groups/groups.service';
 
 import { AuthenticatedHttpService } from '../app/services/http/authenticated-http-service.service';
@@ -34,27 +35,9 @@ import { CourseService } from '../app/services/course/course.service';
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
 
-// const appRoutes: Routes =  [
-//         {
-//             path: 'courses',
-//             component: CourseComponent
-//         },
-//         {
-//             path: 'grades',
-//             component: GradeComponent
-//         },
-//         {
-//             path: 'calendar',
-//             component: CalendarComponent
-//         },
-//         {
-//             path: 'groups',
-//             component: GroupComponent
-//         },
-//         {
-//             path: 'courses/assignments/:id',            
-//             component: AssignmentComponent
-//         },
+//Custom Pipes 
+import {GroupByDatePipe} from '../app/pipes/group-by-date.pipe';  
+
 const appRoutes: Routes = [
     {
         path: 'courses',
@@ -75,6 +58,11 @@ const appRoutes: Routes = [
     {
         path: 'courses/assignments/:id',
         component: AssignmentComponent
+    },  
+    { 
+        path: 'news', 
+        component: NewsFeedComponent
+    
     },
     {
         path: 'account',
@@ -92,7 +80,7 @@ const appRoutes: Routes = [
         HeaderComponent,
         GroupComponent,
         AssignmentComponent,
-        LoggedInComponent,
+        GroupByDatePipe,
         AccountComponent,
         NewsFeedComponent
     ],
@@ -106,6 +94,7 @@ const appRoutes: Routes = [
         GradeService,
        { provide: Http, useClass: AuthenticatedHttpService },
         HttpClient,
+        NewsFeedService,
         GroupService,
         AccountService,
         CourseService

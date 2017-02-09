@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CourseService } from '../../services/course/course.service';
+import {Router} from '@angular/router'
 
 
 
@@ -13,7 +14,7 @@ import { CourseService } from '../../services/course/course.service';
 export class CourseComponent {
     private courses: Course[];
 
-    constructor(courseService: CourseService) {
+    constructor(public router: Router ,courseService: CourseService) {
         courseService.getCourses().subscribe(r => {
 
             this.courses = [];
@@ -25,7 +26,7 @@ export class CourseComponent {
     }
 
     goAssignments(id) {
-        window.location.href = '/courses/assignments/' + id;
+        this.router.navigate(['/courses/assignments/' + id]); 
     }
 }
 
