@@ -1,24 +1,25 @@
 import { Component } from '@angular/core'
 import { Injectable } from '@angular/core'
 
+import { AccountComponent } from '../../components/account/account.component'
+
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { GradeComponent, IGrade } from '../../components/grade/grade.component'
-
 import { HttpClient } from '../../services/http/httpClient.service' 
 
-@Injectable() 
+@Injectable()
 
-export class GradeService {
+
+export class AccountService {
 
     constructor(private http: HttpClient) {
-        
+
     }
 
-    getGrades()  {
-        return this.http.get('https://api.fhict.nl/grades/me')
-            .map(res => <IGrade[]>res.json())
+    getAccount()  {
+        return this.http.get('https://api.fhict.nl/people/me')
+            .map(res => <AccountComponent>res.json())
     }
 }
