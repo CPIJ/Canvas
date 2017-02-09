@@ -1,4 +1,4 @@
-export class item{ 
+export class Post{ 
     id:number; 
     pubDate: Date; 
     title:string; 

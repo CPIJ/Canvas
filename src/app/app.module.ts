@@ -17,6 +17,7 @@ import { AccountComponent } from '../app/components/account/account.component';
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
+import {NewsFeedService} from '../app/services/news-feed/news-feed.service'; 
 import { GroupService } from '../app/services/groups/groups.service';
 import { AccountService } from '../app/services/account/account.service';
 import { CourseService } from '../app/services/course/course.service';
@@ -24,7 +25,8 @@ import { CourseService } from '../app/services/course/course.service';
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
-
+//Custom Pipes 
+import {GroupByDatePipe} from '../app/pipes/group-by-date.pipe';  
 const appRoutes: Routes = [
     {
         path: 'courses',
@@ -46,11 +48,17 @@ const appRoutes: Routes = [
         path: 'courses/assignments/:id',
         
         component: AssignmentComponent
+    },  
+    { 
+        path: 'news', 
+        component: NewsFeedComponent
+    
     },
         {
             path: 'account',
             component: AccountComponent
         }
+
 ]
 
 // Module info
@@ -64,6 +72,7 @@ const appRoutes: Routes = [
         HeaderComponent,
         GroupComponent,
         AssignmentComponent,
+        GroupByDatePipe,
         AccountComponent,
         NewsFeedComponent
     ],
@@ -76,6 +85,7 @@ const appRoutes: Routes = [
     providers: [
         GradeService,
         HttpClient,
+        NewsFeedService,
         GroupService,
         AccountService,
         CourseService
