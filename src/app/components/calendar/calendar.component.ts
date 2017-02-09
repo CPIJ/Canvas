@@ -14,13 +14,17 @@ export class CalendarComponent implements OnInit {
   Schedule: any;
   Title: string;
   Classes: string[]; 
-  PlannedItems: plannedItem[]; 
+  PlannedItems: plannedItem[];
+   
 
-  constructor(private calendarService: CalendarService) { 
+  constructor(private calendarService: CalendarService) {
+
+    window.location.href = 'https://pluff.iris.fhict.nl/'
+
     //Differs from other objects in the application because of the complexity of the object  
     //Therefore it is easier to split the different parts into seperate objects 
-    this.calendarService.getMySchedule().subscribe((data) => this.Title = data.title) 
-    this.calendarService.getMySchedule().subscribe((data) => this.PlannedItems = <plannedItem[]>data.data);   
+    // this.calendarService.getMySchedule().subscribe((data) => this.Title = data.title) 
+    // this.calendarService.getMySchedule().subscribe((data) => this.PlannedItems = <plannedItem[]>data.data);   
       
   }
 
