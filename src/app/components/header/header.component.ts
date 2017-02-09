@@ -23,9 +23,9 @@ export class HeaderComponent {
         this.leftLinks.push(new Link('/news', 'Nieuws'));
 
         // Knoppen aan de rechterkant.
-        this.rightLinks.push(new Link('/inbox', 'Inbox'));
+        // this.rightLinks.push(new Link('/inbox', 'Inbox'));
         this.rightLinks.push(new Link('/account', 'Account'));
-        this.rightLinks.push(new Link('/logout', 'Uitloggen'));
+        // this.rightLinks.push(new Link('/logout', 'Uitloggen'));
     }
 }
 
