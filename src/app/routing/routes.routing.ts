@@ -7,7 +7,7 @@ import { HeaderComponent } from '../components/header/header.component'
 import { CalendarComponent } from '../components/calendar/calendar.component'
 import { CourseComponent } from '../components/course/course.component';
 import { GroupComponent } from '../components/group/group.component';
-
+import { AccountComponent } from '../components/account/account.component';
 
 export class Routing {
     appRoutes: Routes; 
@@ -29,6 +29,10 @@ export class Routing {
         {
             path: 'groups',
             component: GroupComponent
+        },
+        {
+            path: 'account',
+            component: AccountComponent
         }
         ]
     }

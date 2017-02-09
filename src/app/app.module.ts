@@ -11,21 +11,22 @@ import { CalendarComponent } from '../app/components/calendar/calendar.component
 import { CourseComponent } from './components/course/course.component';
 import { GroupComponent } from './components/group/group.component';
 import { AssignmentComponent } from '../app/components/assignment/assignment.component';
+import { NewsFeedComponent } from '../app/components/news-feed/news-feed.component';
+import { AccountComponent } from '../app/components/account/account.component';
 
 // Data services
 import { GradeService } from '../app/services/grades/grades.service';
 import { HttpClient } from '../app/services/http/httpClient.service';
-import { GroupService } from '../app/services/groups/groups.service'; 
 import {NewsFeedService} from '../app/services/news-feed/news-feed.service'; 
+import { GroupService } from '../app/services/groups/groups.service';
+import { AccountService } from '../app/services/account/account.service';
+import { CourseService } from '../app/services/course/course.service';
 
 // Routing
 import { RouterModule, Routes } from '@angular/router';
 import { Routing } from '../app/routing/routes.routing';
-import { NewsFeedComponent } from '../app/components/news-feed/news-feed.component'; 
-
 //Custom Pipes 
 import {GroupByDatePipe} from '../app/pipes/group-by-date.pipe';  
-
 const appRoutes: Routes = [
     {
         path: 'courses',
@@ -51,7 +52,13 @@ const appRoutes: Routes = [
     { 
         path: 'news', 
         component: NewsFeedComponent
-    }
+    
+    },
+        {
+            path: 'account',
+            component: AccountComponent
+        }
+
 ]
 
 // Module info
@@ -65,8 +72,9 @@ const appRoutes: Routes = [
         HeaderComponent,
         GroupComponent,
         AssignmentComponent,
-        NewsFeedComponent,  
-        GroupByDatePipe
+        GroupByDatePipe,
+        AccountComponent,
+        NewsFeedComponent
     ],
     imports: [
         BrowserModule,
@@ -77,8 +85,10 @@ const appRoutes: Routes = [
     providers: [
         GradeService,
         HttpClient,
-        GroupService, 
-        NewsFeedService
+        NewsFeedService,
+        GroupService,
+        AccountService,
+        CourseService
     ],
     bootstrap: [AppComponent]
 })
