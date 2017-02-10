@@ -20,7 +20,7 @@ export class AuthenticatedHttpService extends Http {
             if (error.status === 401 || error.status === 403) {
                 window.location.href = 
                 'https://identity.fhict.nl/connect/authorize?client_id='+ 
-                      this.clientid + '&scope=fhict%20fhict_personal&response_type=token&redirect_uri=localhost:4200&state=' + this.router.url;
+                      this.clientid + '&scope=fhict%20fhict_personal&response_type=token&redirect_uri=http://i357629.venus.fhict.nl/&state=' + this.router.url;
                       
             }
             return Observable.throw(error);
